@@ -1,3 +1,10 @@
 import "dotenv/config"
+import http from "http"
+import { CreateApp } from "./bootstrap"
 
-console.log("It's working =)")
+const app = CreateApp()
+const server = http.createServer(app)
+
+server.listen(3000)
+
+export default { close: (): http.Server => server.close() }

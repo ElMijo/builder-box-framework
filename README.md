@@ -1,2 +1,4 @@
 # builder-box-framework
 This is a Framework to make APIs easily and quickly.
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/ElMijo/builder-box-core/blob/master/LICENSE) [![Build Status](https://travis-ci.com/ElMijo/builder-box-framework.svg?branch=main)](https://travis-ci.com/ElMijo/builder-box-framework) [![codecov](https://codecov.io/gh/ElMijo/builder-box-framework/branch/main/graph/badge.svg?token=QOE8P406JX)](undefined) [![Coverage Status](https://coveralls.io/repos/github/ElMijo/builder-box-framework/badge.svg?branch=main)](https://coveralls.io/github/ElMijo/builder-box-framework?branch=main) [![dependencies Status](https://david-dm.org/ElMijo/builder-box-framework/status.svg)](https://david-dm.org/ElMijo/builder-box-framework) [![devDependencies Status](https://david-dm.org/ElMijo/builder-box-framework/dev-status.svg)](https://david-dm.org/ElMijo/builder-box-framework?type=dev)

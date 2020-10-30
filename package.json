@@ -8,16 +8,19 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc ",
+    "start:dev":"nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "lint": "eslint . --ext .ts --fix",
     "format": "prettier --write src",
-    "test:unit": "jest --runTestsByPath tests/unit/*.test.ts --coverage",
-    "test:integration": "jest --runTestsByPath tests/integration/*.test.ts"
+    "test:unit": "jest --runTestsByPath tests/unit/*.test.ts --verbose --coverage",
+    "test:integration": "jest --runTestsByPath tests/integration/*.test.ts  --verbose"
   },
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.8",
     "@types/jest": "^26.0.15",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
@@ -74,6 +77,7 @@
     "printWidth": 120
   },
   "eslintConfig": {
+    "root": true,
     "env": {
       "es6": true,
       "node": true,
@@ -91,7 +95,7 @@
       "prettier/@typescript-eslint"
     ],
     "globals": {
-      "jest": true,
+      "jest": "readonly",
       "Atomics": "readonly",
       "SharedArrayBuffer": "readonly"
     },
@@ -106,13 +110,17 @@
         "error",
         "double"
       ],
-      "import/no-extraneous-dependencies": "off"
+      "import/prefer-default-export": "off",
+      "import/no-extraneous-dependencies": "off",
+      "@typescript-eslint/no-namespace": "off",
+      "import/no-unresolved": "off",
+      "import/extensions": "off"
     },
     "ignorePatterns": [
       "dist",
       "index.js",
       "node_modules",
-      "test/jest.setup.ts"
+      "tests"
     ]
   },
   "husky": {
@@ -122,7 +130,7 @@
     }
   },
   "lint-staged": {
-    "{src,test}/**/*.ts": [
+    "{src,tests}/**/*.ts": [
       "prettier --write src",
       "eslint . --ext .ts --fix",
       "prettier --check src "
