@@ -8,10 +8,11 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc ",
+    "build:check": "tsc --noEmit",
     "start:dev":"nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "lint": "eslint . --ext .ts --fix",
     "format": "prettier --write src",
-    "test:unit": "jest --runTestsByPath tests/unit/*.test.ts --verbose --coverage",
+    "test:unit": "jest --testPathPattern=tests/unit --verbose --coverage",
     "test:integration": "jest --runTestsByPath tests/integration/*.test.ts  --verbose"
   },
   "dependencies": {
@@ -114,7 +115,10 @@
       "import/no-extraneous-dependencies": "off",
       "@typescript-eslint/no-namespace": "off",
       "import/no-unresolved": "off",
-      "import/extensions": "off"
+      "import/extensions": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-call":"off",
+      "@typescript-eslint/no-unsafe-member-access":"off"
     },
     "ignorePatterns": [
       "dist",
