@@ -22,6 +22,12 @@ export namespace Helpers {
     }
 }
 
+export namespace Tools {
+    export interface Thrower {
+        (code: string, message: string, status?: number, context?: Array<any>): void
+    }
+}
+
 export namespace Errors {
     export interface BuilderBoxErrorProps {
         /**
