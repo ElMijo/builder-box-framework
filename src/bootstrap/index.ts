@@ -1,3 +1,4 @@
+import "../tools/globals"
 import Express from "express"
 import { App } from "../types"
 
