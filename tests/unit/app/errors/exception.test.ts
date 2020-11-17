@@ -27,7 +27,7 @@ describe("Testing Exception class", () => {
         expect(exported.code).toBe("E001")
         expect(exported.status).toBe(400)
         expect(exported.message).toBe("Bad request")
-        expect(exported.context).toStrictEqual([])
+        expect(exported.context).toStrictEqual({})
     })
 
     test("Checking export result with context", () => {
@@ -49,7 +49,7 @@ describe("Testing Exception class", () => {
     test("Checking json result without context", () => {
         const trace = JSON.stringify(error.trace)
         expect(error.json()).toBe(
-            '{"name":"Exception","code":"E001","status":400,"message":"Bad request","trace":' + trace + ',"context":[]}'
+            '{"name":"Exception","code":"E001","status":400,"message":"Bad request","trace":' + trace + ',"context":{}}'
         )
     })
 

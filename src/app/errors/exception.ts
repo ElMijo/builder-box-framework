@@ -22,7 +22,7 @@ export default class Exception extends Error implements Errors.BuilderBoxError {
     /**
      * {@inheritdoc}
      */
-    public readonly context: Array<any>
+    public readonly context: Errors.BuilderBoxErrorContext
 
     /**
      *
@@ -31,7 +31,7 @@ export default class Exception extends Error implements Errors.BuilderBoxError {
      * @param message {string}
      * @param context {Array}
      */
-    constructor(code: string, status: number, message: string, context: Array<any> = []) {
+    constructor(code: string, status: number, message: string, context: Errors.BuilderBoxErrorContext = {}) {
         super(message)
         Object.defineProperty(this, "name", {
             value: this.constructor.name,
