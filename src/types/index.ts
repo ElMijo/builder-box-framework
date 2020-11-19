@@ -29,6 +29,11 @@ export namespace Tools {
 }
 
 export namespace Errors {
+    export interface BuilderBoxErrorContext {
+        validation?: { [propName: string]: string }
+        [propName: string]: any
+    }
+
     export interface BuilderBoxErrorProps {
         /**
          * Error code
@@ -50,9 +55,9 @@ export namespace Errors {
 
         /**
          * Error context
-         * @type {Array}
+         * @typedef {BuilderBoxErrorContext}
          */
-        context: Array<any>
+        context: BuilderBoxErrorContext
     }
 
     export interface BuilderBoxErrorExportObject extends Object, BuilderBoxErrorProps {
